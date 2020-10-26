@@ -70,3 +70,11 @@ resource "kafka-connect_connector" "sqlite-sink" {
 [2]: https://kafka.apache.org/documentation/#connect
 [third-party-plugins]: https://www.terraform.io/docs/configuration/providers.html#third-party-plugins
 [install-go]: https://golang.org/doc/install#install
+
+
+## Build
+```bash
+go mod download
+GOOS=linux GOARCH=amd64 go build -o terraform-provider-jira-linux main.go
+GOOS=darwin GOARCH=amd64 go build -o terraform-provider-jira-macos main.go
+```
